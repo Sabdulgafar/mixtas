@@ -1,33 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import NavBar from './assets/navbar'
 import './App.css'
+import Banner from './assets/Banner'
+import Developer from './assets/Developer'
+import Images from './assets/imageRender'
 
 function App() {
   const [count, setCount] = useState(0)
+  const developerProfile = [
+      {id:1, avatar: Images.tech_team_1, name:"Kengan Ashura", role:"Front-End Developer"},
+      {id:2, avatar: Images.tech_team_3, name:"Uri Uromanave", role:"Front-End Engineer"},
+      {id:3, avatar: Images.tech_team_2, name:"Mishima Shimamoto", role:"Back-End Engineer"},
+      {id:4, avatar: Images.tech_team_4, name:"Hashiro Nagasake", role:"UI/UX Designer"}
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <NavBar/>
+    <Banner/>
+    {developerProfile.map(profile=>(
+    // the first div is to create a grid for the other divs (profile cards) to hold in
+    <div className='grid grid-cols grid-3'> 
+      <Developer
+        key={profile.id}
+        avatar={profile.avatar}
+        name={profile.name}
+        role={profile.role}
+      />
+    </div>
+    ))}
     </>
   )
 }
