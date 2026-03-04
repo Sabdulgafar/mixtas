@@ -3,15 +3,15 @@ import NavQuickLinks from "./navQuickLinks"
 function NavBar(){
     const navlinks = [
         {id:1, name:"Home", href:"#"},
-        {id:1, name:"Shop", href:"#"},
-        {id:1, name:"Pages", href:"#"},
-        {id:1, name:"Blog", href:"#"},
-        {id:1, name:"Contact Us", href:"#"}
+        {id:2, name:"Shop", href:"#"},
+        {id:3, name:"Pages", href:"#"},
+        {id:4, name:"Blog", href:"#"},
+        {id:5, name:"Contact Us", href:"#"}
     ]
     const quicklinks = [
         {id:1, name:"FB", link:"#"},
-        {id:1, name:"IG", link:"#"},
-        {id:1, name:"PT", link:"#"}
+        {id:2, name:"IG", link:"#"},
+        {id:3, name:"PT", link:"#"}
     ]
     return(
         <nav>
